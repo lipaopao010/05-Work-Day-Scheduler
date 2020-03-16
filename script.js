@@ -82,13 +82,19 @@ function checkHour(){
     console.log(currentHour);
     for (var i=0; i< 9;i++){
         var currentRow = $(".container")[0].children[i]
-        console.log(currentRow);
+        console.log(currentRow.children[1]);
+        var planText = currentRow.children[1];
         var hourNumber = currentRow.getAttribute("id");
         console.log(hourNumber);
         
         if (hourNumber < currentHour){
-            console.log($("# 9"));
-            $("#hourNumber").attr("class","row grey");
+            planText.setAttribute("class", "col-sm-9 plan grey");   
+        }
+        else if(hourNumber > currentHour){
+            planText.setAttribute("class", "col-sm-9 plan pink");
+        }
+        else{
+            planText.setAttribute("class", "col-sm-9 plan green");
         }
     
     }

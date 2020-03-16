@@ -61,6 +61,12 @@ p{
     
 }
 .grey{
-    background-color: gray;
+    background-color:lightgray;
+}
+.pink{
+    background-color:lightpink;
+}
+.green{
+    background-color:lightseagreen;
 }
 
