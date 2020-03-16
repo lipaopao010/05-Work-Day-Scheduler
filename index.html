@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href = "style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Work Day Schedular</title>
+</head>
+<body> 
+
+    <h1>
+        Work Day Schedular
+    </h1>
+    <!--display today's date-->
+    <h2>
+        Today is  <span id ="currentDay"></span>
+    </h2>
+    <!--form of day schedular-->
+    <hr>
+        <div class = "container">
+            <div class = "row" id ="9">
+                <div class= "col-sm-2 time"> 9AM </div>
+                <!--<div class="col-sm-9 input-group input-group-lg">-->
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button" > 
+                </button>
+                
+            </div>
+            <div class = "row" id ="10">
+                <div class= "col-sm-2 time"> 10AM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+            </div>
+            <div class = "row" data-name="11">
+                <div class= "col-sm-2 time"> 11AM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+                
+            </div>
+            <div class = "row" data-name="12">
+                <div class= "col-sm-2 time"> 12PM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+            </div>
+            <div class = "row" data-name="13">
+                <div class= "col-sm-2 time"> 1PM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+            </div>
+            <div class = "row" data-name="14">
+                <div class= "col-sm-2 time"> 2PM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+            </div>
+            <div class = "row" data-name="15">
+                <div class= "col-sm-2 time"> 3PM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+            </div>
+            <div class = "row" data-name="16">
+                <div class= "col-sm-2 time"> 4PM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+            </div>
+            <div class = "row" data-name="17">
+                <div class= "col-sm-2 time"> 5PM </div>
+                <input class = "col-sm-9 plan" placeholder="put your plan here"> 
+                <button class= "col-sm-1 save" type = "button"> 
+                </button>
+            </div>
+            
+        </div>
+        <script src="moment.js"></script>
+        <script src="script.js"></script>
+        
+</body> 
+</html>

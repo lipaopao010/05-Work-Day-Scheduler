@@ -1,0 +1,66 @@
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+hr{
+    height: 4px;
+    background-color:black;
+}
+p{
+    font-size: 20px;
+}
+.container{
+
+    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-bottom: 4rem;
+    
+    
+
+}
+.time, .plan {
+   border-style: solid solid none none;
+   text-align: justify; 
+   border-color: lightgrey;
+}
+.form-control{
+    height: auto;
+    background-color: pink;
+}
+
+.plan{
+    background-color: pink;
+}
+.row{
+  
+    height: 5rem;
+    font-size: large;
+}
+.save{
+    background-image: url("save icon.png");
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5rem;
+    border-radius: 5px;
+    border-color: lightgray;
+    border-style: solid solid none none;
+   
+    
+}
+.grey{
+    background-color: gray;
+}
+
