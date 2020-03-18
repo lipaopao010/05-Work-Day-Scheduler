@@ -3,7 +3,6 @@ h1{
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
-
 }
 
 h2{
@@ -12,35 +11,37 @@ h2{
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
 hr{
     height: 4px;
     background-color:black;
 }
+
 p{
     font-size: 20px;
 }
-.container{
 
+.container{
     margin-top: 2rem;
     margin-left: 5rem;
     margin-bottom: 4rem;
-    
-    
-
 }
+
 .time, .plan {
    border-style: solid solid none none;
    text-align: justify; 
    border-color: lightgrey;
 }
+
 .form-control{
     height: auto;
     background-color: pink;
 }
 
 .plan{
-    background-color: pink;
+    background-color:lightgrey;
 }
+
 .row{
   
     height: 5rem;
@@ -56,16 +57,17 @@ p{
     background-size: 1.5rem 1.5rem;
     border-radius: 5px;
     border-color: lightgray;
-    border-style: solid solid none none;
-   
-    
+    border-style: solid solid none none; 
 }
+
 .grey{
     background-color:lightgray;
 }
+
 .pink{
     background-color:lightpink;
 }
+
 .green{
     background-color:lightseagreen;
 }

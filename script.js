@@ -1,109 +1,97 @@
-//THEN the current day is displayed at the top of the calendar
-//WHEN I scroll down
-//THEN I am presented with timeblocks for standard business hours
-//WHEN I view the timeblocks for that day
-//THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-//WHEN I click into a timeblock
-//THEN I can enter an event
-//WHEN I click the save button for that timeblock
-//THEN the text for that event is saved in local storage
-//WHEN I refresh the page
-//THEN the saved events persist
-
-
+//1. set a few variables
 var m = moment();
 var current = moment().toString();
 var currentTime = moment().toObject()
-console.log(current);
-console.log(currentTime);
-moment().isBefore();
 
-
-checkHour();
-//console.log($(".container")[0].children[0].getAttribute("data-name"));
-
-
-
-//1. Display the current date
-
-
-
+//2 . Display the current date.
 var currentDay = m.format("dddd, MMMM Do YYYY");
 $("#currentDay").text(currentDay);
 
+//3. call the function to check current hour, and change the background color
+checkHour();
 
-// put the text in the plan 
-
-// click the button to save the plan
-
-
-
-//3. save events to local storage
+//4. call the function to get the saved text from local storage
 
 var totalPlan = [];
+init();
+
+//5. this is the function to get the data from local storage
+function init(){
+    var storedData = JSON.parse(localStorage.getItem("plan"));
+    if (storedData !== null){
+     totalPlan = storedData;
+    }
+    fillInPlan();
+}
 
 
+//6. This is the function to save plans
 $(".save").on("click",function(){
-   console.log(this.parentElement);
-   console.log(this);
-   console.log(this.parentElement);
+
    var userPlan = this.parentElement.children[1].value;
    var timeEl = this.parentElement.children[0].innerText;
-   console.log(userPlan);
-   console.log(timeEl);
 
    if (this.matches("button") === true) {
-       console.log("true");
-       var user = {
-           Date : currentDay,
-           Time : timeEl,
-           Plans : userPlan
-       }
-       console.log(user);
-       totalPlan.push(user);
-       console.log(totalPlan);
-       //get the data-name 
-       //save the date in the array
-       //save it in local storage
-       storeTotalPlan();
-   } 
+       if (totalPlan !== []){
+            for (i=0;i<totalPlan.length;i++){
+                    var timeID = totalPlan[i].Time;
+                    if (timeEl === timeID){
+                        totalPlan.splice(i,1);
+                    }
+                }
+            }           
+        var user = {
+                Date : currentDay,
+                Time : timeEl,
+                Plans : userPlan
+            }
+            
+        totalPlan.push(user); 
+        storeTotalPlan();  
+   }        
 })
 
-
+7. //this is the function to save data into local storage
 function storeTotalPlan(){
     localStorage.setItem("plan", JSON.stringify(totalPlan));
 }
-// get item from local storage
 
-// check the current time and change background color accordingly
 
+8. // this is the function to check current hour and change backgroud color accordingly
 function checkHour(){
     var currentHour = m.format("H");
-    console.log(currentHour);
     for (var i=0; i< 9;i++){
         var currentRow = $(".container")[0].children[i]
-        console.log(currentRow.children[1]);
         var planText = currentRow.children[1];
         var hourNumber = currentRow.getAttribute("id");
-        console.log(hourNumber);
         
         if (hourNumber < currentHour){
-            planText.setAttribute("class", "col-sm-9 plan grey");   
+            planText.setAttribute("class", "col-sm-9 plan grey");  
         }
-        else if(hourNumber > currentHour){
+        else if(hourNumber > currentHour){ 
             planText.setAttribute("class", "col-sm-9 plan pink");
         }
         else{
-            planText.setAttribute("class", "col-sm-9 plan green");
+            planText.setAttribute("class", "col-sm-9 plan green");   
         }
-    
     }
+}
 
 
 
 
-    $("div.row").each(function(){
-
-    })
-
+9. // this is the function to put the saved data into the html
+function fillInPlan(){
+    for (i=0;i<totalPlan.length;i++){
+        if(totalPlan[i].Date === currentDay){
+            var timeID = totalPlan[i].Time;
+            var planEl = totalPlan[i].Plans;
+            $("#" + timeID).val(planEl);
+        }
+        else{
+            //clear local storage if the date is not same
+            localStorage.clear();
+            init();
+        }
+    }
 }
